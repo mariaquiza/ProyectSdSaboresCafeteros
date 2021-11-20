@@ -1,0 +1,39 @@
+<div class="contenido-superior vacante contenedor">
+    <div class="caja">
+        <p class="etiqueta">Nombre</p>
+        <p class="nombre">{{pedido.nombre}}</p>
+    </div>
+    <div class="caja">
+        <p class="etiqueta">Telefono</p>
+        <p class="nombre">{{pedido.telefono}}</p>
+    </div>
+    <div class="caja">
+        <p class="etiqueta">Dirección</p>
+        <p class="nombre contrato">{{pedido.direccion}}</p>
+    </div>
+    <div class="caja">
+        <p class="etiqueta">Barrio</p>
+        <p class="nombre"> {{pedido.barrio}}</p>
+    </div>
+</div>
+
+<div class="vacante-contenedor contenedor">
+    <main class="contenido">
+        <h2>Descripción del Pedido</h2>
+        <div class="vacante-descripcion">
+            {{{pedido.descripcion}}}
+        </div>
+        <a href="/pedidos/editar/{{pedido.url}}" class="btn btn-azul editar-btn">
+        Editar Pedido
+        </a>
+    </main>
+    <aside class="sidebar">
+        <h2>Lista de productos a consumir</h2>
+        <ul class="skills">
+            {{#each pedido.skilll}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </aside>
+
+</div>

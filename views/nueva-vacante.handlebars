@@ -1,0 +1,46 @@
+<main class="contenedor">
+    <form action="/vacantes/nueva" method="POST" class="default-form">
+        <h3>Información General de la Reserva</h3>
+        <div class="campo">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" placeholder="Ingrese el nombre de la persona que realiza la reserva" required>
+        </div>
+        <div class="campo">
+            <label>Telefono:</label>
+            <input type="text" name="telefono" placeholder="Ingrese su numero telefonico" required>
+        </div>
+        <div class="campo">
+            <label>Motivo:</label>
+            <input type="text" name="motivo" placeholder="Ingrese el Motivo de su reserva" required>
+        </div>
+        <div class="campo">
+            <label>Fecha:</label>
+            <input type="text" name="fecha" placeholder="Ingrese la fecha para la reserva" required>
+        </div>
+        <div class="campo">
+            <label>Cantidad:</label>
+            <input type="text" name="cantidad" placeholder="Ingrese la cantidad de personas que van asistir" required>
+        </div>
+        <div class="campo">
+            <label>Zona:</label>
+            <select name="zona">
+                <option disabled selected>Selecciona</option>
+                <option value="Terraza">Terraza</option>
+                <option value="Dentro">Dentro de las instalaciones</option>
+                <option value="Fuera">Fuera de las instalaciones</option>
+            </select>
+        </div>
+        <h3>Descripción de la reserva</h3>
+        <input type="hidden" name="descripcion" id="x">
+        <trix-editor input="x"></trix-editor>
+        <h3>Lista de Productos a consumir</h3>
+        <ul class="lista-conocimientos">
+            {{#seleccionarSkills a}}
+            {{/seleccionarSkills}}
+        </ul>
+        <div class="campo centrar-horizontal">
+            <input type="hidden" name="skills" id="skills">
+            <input type="submit" value="Realizar reserva" class="btn btn-azul">
+        </div>
+    </form>
+</main>

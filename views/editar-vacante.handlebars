@@ -1,0 +1,54 @@
+<main class="contenedor">
+    <form action="/vacantes/editar/{{vacante.url}}" method="POST" class="default-form">
+        <h3>Información General de la Reserva</h3>
+        <div class="campo">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" value="{{vacante.nombre}}"  placeholder="Ingrese el nombre de la persona a la que va la reserva" 
+            required>
+        </div>
+        <div class="campo">
+            <label>Telefono:</label>
+            <input type="text" name="telefono" value="{{vacante.telefono}}" placeholder="Ingrese el numero de telefono"
+             required>
+        </div>
+        <div class="campo">
+            <label>Motivo:</label>
+            <input type="text" name="motivo" value="{{vacante.motivo}}" placeholder="Ingrese la ubicación de la vacante" 
+            required>
+        </div>
+        <div class="campo">
+            <label>Fecha:</label>
+            <input type="text" name="fecha" value="{{vacante.fecha}}" placeholder="Ingrese la fecha de la reserva" 
+            required>
+        </div>
+        <div class="campo">
+            <label>Cantidad:</label>
+            <input type="text" name="cantidad" value="{{vacante.cantidad}}" placeholder="Ingrese la cantidad de personas para la reserva" 
+            required>
+        </div>
+        <div class="campo">
+            <label>Zona:</label>
+            <select name="zona">
+                <option disabled selected>Selecciona</option>
+                <option value="Terraza">Terraza</option>
+                <option value="Dentro">Dentro de las instalaciones</option>
+                <option value="Fuera">Fuera de las instalaciones</option>
+            </select>
+        </div>
+        <h3>Descripción de la reserva</h3>
+
+        <input type="hidden" value="{{{vacante.descripcion}}}" name="descripcion" id="x">
+
+        <trix-editor input="x"></trix-editor>
+
+        <h3>Lista de Productos a consumir</h3>
+        <ul class="lista-conocimientos">
+            {{#seleccionarSkills vacante.skills}}
+            {{/seleccionarSkills}}
+        </ul>
+        <div class="campo centrar-horizontal">
+            <input type="hidden" name="skills" id="skills">
+            <input type="submit" value="Realizar Reserva" class="btn btn-azul">
+        </div>
+    </form>
+</main>

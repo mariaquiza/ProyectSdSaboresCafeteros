@@ -1,0 +1,43 @@
+<main class="contenedor">
+    <form action="/pedidos/editar/{{pedido.url}}" method="POST" class="default-form">
+        <h3>Información General del Pedido</h3>
+        <div class="campo">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" value="{{pedido.nombre}}"  placeholder="Ingrese el nombre de la persona que recibe el pedido" 
+            required>
+        </div>
+        <div class="campo">
+            <label>Telefono:</label>
+            <input type="text" name="telefono" value="{{pedido.telefono}}" placeholder="Ingrese el numero de celular"
+             required>
+        </div>
+        <div class="campo">
+            <label>Dirección:</label>
+            <input type="text" name="direccion" value="{{pedido.direccion}}" placeholder="Ingrese la dirección de su domicilio" 
+            required>
+        </div>
+         <div class="campo">
+            <label>Barrio:</label>
+            <input type="text" name="barrio" value="{{pedido.barrio}}" placeholder="Ingrese el barrio de su domicilio" 
+            required>
+        </div>
+        <div class="campo">
+            <label>Pago de su pedido:</label>
+            <select name="pago">
+                <option disabled selected>Selecciona</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Tarjeta">Tarjeta</option>
+                
+            </select>
+        </div>
+        <h3>Que desea pedir</h3>
+
+        <input type="hidden" value="{{{pedido.description}}}" name="description" id="x">
+
+        <trix-editor input="x"></trix-editor>
+        <div class="campo centrar-horizontal">
+            <input type="hidden" name="skilll" id="skilll">
+            <input type="submit" value="Registrar Pedido" class="btn btn-azul">
+        </div>
+    </form>
+</main>

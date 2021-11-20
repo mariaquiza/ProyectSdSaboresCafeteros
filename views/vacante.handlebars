@@ -1,0 +1,39 @@
+<div class="contenido-superior vacante contenedor">
+    <div class="caja">
+        <p class="etiqueta">Nombre</p>
+        <p class="nombre">{{vacante.nombre}}</p>
+    </div>
+    <div class="caja">
+        <p class="etiqueta">Telefono</p>
+        <p class="nombre">{{vacante.telefono}}</p>
+    </div>
+    <div class="caja">
+        <p class="etiqueta">Zona</p>
+        <p class="nombre contrato">{{vacante.zona}}</p>
+    </div>
+    <div class="caja">
+        <p class="etiqueta">Fecha</p>
+        <p class="nombre"> {{vacante.fecha}}</p>
+    </div>
+</div>
+
+<div class="vacante-contenedor contenedor">
+    <main class="contenido">
+        <h2 >Descripción de la reserva</h2>
+        <div class="vacante-descripcion">
+            {{{vacante.descripcion}}}
+        </div>
+        <a href="/vacantes/editar/{{vacante.url}}" class="btn btn-azul editar-btn">
+        Editar Reserva
+        </a>
+    </main>
+    <aside class="sidebar">
+        <h2>Lista de productos a consumir</h2>
+        <ul class="skills">
+            {{#each vacante.skills}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </aside>
+
+</div>

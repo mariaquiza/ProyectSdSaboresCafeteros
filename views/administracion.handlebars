@@ -1,0 +1,51 @@
+<main class="lista-vacantes">
+    <h2>Navegación</h2>
+    <div class="botones separador">
+        <a href="/editar-perfil" class="boton_personalizado">Editar Perfil</a>
+        <a href="/vacantes/nueva" class="boton_personalizado">Nueva Reserva</a>
+        <a href="/pedidos/nueva" class="boton_personalizado">Nuevo Pedido</a>
+    </div>
+    <div>
+        <h2>Tus Reservas!</h2>
+        {{#if vacante.length}}
+        {{#each vacante}}
+        <div class="vacante panel-administracion">
+            <div class="caja">
+                <h3>{{nombre}}</h3>
+                <p class="puesto">{{telefono}}</p>
+            </div>
+            <div class="centrar-vertical caja">
+                <a href="/vacantes/editar/{{url}}" class="boton_personalizado">Editar</a>
+            </div>
+            <div class="centrar-vertical caja">
+                <a href="#" data-eliminar={{id}} class="boton_personalizado">Eliminar</a>
+            </div>
+        </div>
+        {{/each}}
+        {{else}}
+        <p>No hay Reservas por el momento!</p>
+        {{/if}}
+    </div>
+    <div>
+        <h2>Tus Pedidos!</h2>
+        {{#if pedido.length}}
+        {{#each pedido}}
+        <div class="vacante panel-administracion">
+            <div class="caja">
+                <h3>{{nombre}}</h3>
+                <p class="puesto">{{telefono}}</p>
+            </div>
+            <div class="centrar-vertical caja">
+                <a href="/pedidos/editar/{{url}}" class="boton_personalizado">Editar</a>
+            </div>
+            <div class="centrar-vertical caja">
+                <a href="#" data-eliminar={{id}} class="boton_personalizado">Eliminar</a>
+            </div>
+        </div>
+        {{/each}}
+        {{else}}
+        <p>No hay Pedidos por el momento!</p>
+        {{/if}}
+    </div>
+    
+</main>
